@@ -5,8 +5,10 @@ docker run -it \
     --name=jetpack-sdk \
     --rm=true \
     --net=host \
-    --ipc host\
+    --ipc host \
     --privileged \
+    --cap-add=NET_ADMIN \
+    --entrypoint= \
     --volume="/dev/bus/usb:/dev/bus/usb" \
     --user "$(id -u):$(id -g)" \
     --env="DISPLAY=$DISPLAY" \
