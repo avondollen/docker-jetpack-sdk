@@ -13,10 +13,16 @@ USER user
 
 # Install SDK deps
 RUN sudo apt-get update && sudo apt-get install -y \
+    bash-completion \
     libgconf-2-4 \
     libcanberra-gtk-module \
     locales \
     netcat \
+    iproute2 \
+    iputils-ping \
+    iptables \
+    dnsutils \
+    network-manager \
     openssh-server \
     usbutils \
     libgtk-3-0 \
@@ -25,12 +31,12 @@ RUN sudo apt-get update && sudo apt-get install -y \
     libnss3 \
     libcanberra-gtk-module \
     libcanberra-gtk3-module \
+    lsb-release \
     nodejs \
-    firefox \
     npm
 
-COPY sdkmanager_1.0.1-5538_amd64.deb /
+COPY sdkmanager_1.3.1-7110_amd64.deb /
 COPY entrypoint.sh /entrypoint.sh
-RUN sudo apt-get install -y /sdkmanager_1.0.1-5538_amd64.deb
+RUN sudo apt-get install -y /sdkmanager_1.3.1-7110_amd64.deb
 
 ENTRYPOINT [ "/entrypoint.sh" ]
