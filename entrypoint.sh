@@ -3,8 +3,6 @@ set -e
 
 sdkmanager \
 --cli install \
---user email@domain.com \
---password xyz \
 --logintype devzone \
 --product Jetson \
 --version 4.3 \
